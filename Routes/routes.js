@@ -6,3 +6,7 @@ exports.index = (req, res) => {
         "nav": nav
     });
 }
+
+exports.login = (req, res) => {
+    res.render('login')
+}
