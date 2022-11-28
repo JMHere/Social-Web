@@ -1,6 +1,7 @@
 const nav = require('../nav')
 const { response } = require('express');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { urlencoded } = require('body-parser');
 
 mongoose.Promise = global.Promise;
 
@@ -35,10 +36,7 @@ exports.index = (req, res) => {
             "nav": nav,
             users
         });
-
     })
-
-    
 }
 
 exports.createUser = (req, res) => {
@@ -59,4 +57,16 @@ exports.createUser = (req, res) => {
 
 exports.login = (req, res) => {
     res.render('login')
+}
+
+exports.loginCheck = (req, res) => {
+    User.find((error, users) => {
+        if (error) return console.error(error);
+        res.render('login');
+        users.forEach(function(user) {
+            if (String(user.name) == "Jose") {
+                console.log('hey')
+            }
+        })
+    })
 }

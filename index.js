@@ -17,5 +17,7 @@ app.set('Views', path.join(__dirname, '/Views'));
 app.use(express.static(path.join(__dirname, '/Style')));
 
 app.get('/', routes.index);
+// app.get('/login', routes.login);
+app.get('/login', urlencodedParser, routes.loginCheck);
 
 app.listen(3000);
