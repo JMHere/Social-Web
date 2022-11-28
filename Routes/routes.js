@@ -6,3 +6,10 @@ exports.index = (req, res) => {
         "nav": nav
     });
 }
+
+exports.form = (req, res) => {
+    res.render('createaccount', {
+        "title": "Create your account",
+        "nav": nav
+    });
+}
