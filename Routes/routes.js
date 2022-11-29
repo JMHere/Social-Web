@@ -63,9 +63,11 @@ exports.loginCheck = (req, res) => {
     User.find((error, users) => {
         if (error) return console.error(error);
         res.render('login');
+        console.log(req.body.password)
         users.forEach(function(user) {
-            if (String(user.name) == "Jose") {
-                console.log('hey')
+            let pass = user.password;
+            if (pass == req.body.password) {
+                console.log(1)
             }
         })
     })
