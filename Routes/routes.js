@@ -45,18 +45,21 @@ exports.login = (req, res) => {
         var userinfo;
 
         users.forEach(function(user) {
-            userinfo = user;
             var username = user.userName
             if (username == req.body.username) {
-                
+                userinfo = user;
             }
         })
+
+        let user = {
+            userName: userinfo.userName,
+            fname: userinfo.name
+        }
 
         res.render('home', {
             "title": "Home",
             "nav": nav,
-            "user": userinfo,
-            users
+            "user": user,
         })
     })
 
