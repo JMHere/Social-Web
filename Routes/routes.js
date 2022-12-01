@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise;
 
-const connectionString = 'mongodb://localhost/data';
+const connectionString = 'mongodb+srv://root:Passroot1234@cluster0.i0jkmej.mongodb.net/test';
 mongoose.connect(connectionString, {
     useUnifiedTopology: true
 });
