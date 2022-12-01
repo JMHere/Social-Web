@@ -30,7 +30,7 @@ exports.index = (req, res) => {
         if (error) return console.error(error);
 
         res.render('index', {
-            "title": "Home",
+            "title": "Login",
             "nav": nav,
             users
         });
@@ -52,10 +52,10 @@ exports.login = (req, res) => {
             }
         })
 
-        res.render('index', {
+        res.render('home', {
             "title": "Home",
             "nav": nav,
-            "title2": userinfo,
+            "user": userinfo,
             users
         })
     })

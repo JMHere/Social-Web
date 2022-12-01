@@ -15,6 +15,7 @@ block content
                 td #{item.password}
                 td 
                     a(href='/delete/' + item.id) Delete
+                    
     form(id='form', method='post', action="/login")
         p UserName: 
             input(type="text", name='username')
