@@ -28,13 +28,40 @@ exports.index = (req, res) => {
 
     User.find((error, users) => {
         if (error) return console.error(error);
+
         res.render('index', {
             "title": "Home",
             "nav": nav,
             users
         });
+
     })
 }
+
+exports.login = (req, res) => {
+    User.find((error, users) => {
+        if (error) return console.error(error);
+
+        var userinfo;
+
+        users.forEach(function(user) {
+            userinfo = user;
+            var username = user.userName
+            if (username == req.body.username) {
+                
+            }
+        })
+
+        res.render('index', {
+            "title": "Home",
+            "nav": nav,
+            "title2": userinfo,
+            users
+        })
+    })
+
+}
+
 
 exports.createUser = (req, res) => {
     let user = new User({

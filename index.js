@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, '/Style')));
 app.get('/', routes.index);
 app.post('/create', urlencodedParser, routes.createUser);
 app.get('/account', routes.form)
+app.post('/login', urlencodedParser, routes.login);
 app.get('/search', urlencodedParser, routes.search)
 app.get('/searchaccount', routes.searchForm)
 app.get('/delete/:id', routes.delete);
