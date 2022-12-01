@@ -1,4 +1,16 @@
 extends layout 
 
 block content 
-    
+    table 
+        tr  
+            th Name 
+            th Last Name 
+            th UserName 
+            th Password 
+        each item in users 
+            tr 
+                td #{item.name}
+                td #{item.lName}
+                td #{item.userName}
+                td #{item.password}
+            
