@@ -29,8 +29,6 @@ exports.index = (req, res) => {
     User.find((error, users) => {
         if (error) return console.error(error);
 
-        
-
         res.render('index', {
             "title": "Home",
             "nav": nav,
@@ -38,15 +36,38 @@ exports.index = (req, res) => {
         });
 
     })
-
-    
 }
+
+exports.login = (req, res) => {
+    User.find((error, users) => {
+        if (error) return console.error(error);
+
+        var userinfo;
+
+        users.forEach(function(user) {
+            userinfo = user;
+            var username = user.userName
+            if (username == req.body.username) {
+                
+            }
+        })
+
+        res.render('index', {
+            "title": "Home",
+            "nav": nav,
+            "title2": userinfo,
+            users
+        })
+    })
+
+}
+
 
 exports.createUser = (req, res) => {
     let user = new User({
-        name: req.body.name,
-        lName: req.body.lName,
-        userName: req.body.userName,
+        name: req.body.fname,
+        lName: req.body.lname,
+        userName: req.body.username,
         password: req.body.password
     });
 

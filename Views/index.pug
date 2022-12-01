@@ -13,5 +13,12 @@ block content
                 td #{item.lName}
                 td #{item.userName}
                 td #{item.password}
-    
+                
+    form(id='form', method='post', action="/login")
+        p UserName: 
+            input(type="text", name='username')
+        p Password:
+            input(type="text", name='password')
+        p 
+            input(type="submit", value='Login')
             

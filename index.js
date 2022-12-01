@@ -16,11 +16,9 @@ app.set('Views', path.join(__dirname, '/Views'));
 // setup location for public files
 app.use(express.static(path.join(__dirname, '/Style')));
 
-app.post('/', routes.index);
+app.get('/', routes.index);
 app.post('/create', urlencodedParser, routes.createUser);
 app.get('/account', routes.form)
-
-
-
+app.post('/login', urlencodedParser, routes.login);
 
 app.listen(3000);
