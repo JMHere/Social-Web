@@ -28,24 +28,19 @@ exports.index = (req, res) => {
 
     User.find((error, users) => {
         if (error) return console.error(error);
-
-
         res.render('index', {
             "title": "Home",
             "nav": nav,
             users
         });
-
     })
-
-    
 }
 
 exports.createUser = (req, res) => {
     let user = new User({
-        name: req.body.name,
-        lName: req.body.lName,
-        userName: req.body.userName,
+        name: req.body.fname,
+        lName: req.body.lname,
+        userName: req.body.username,
         password: req.body.password
     });
 

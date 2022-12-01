@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    form(id='form' method='get' action="/")
+    form(id='form' method='post' action="/create")
         p First Name:&nbsp;&nbsp;
             input(type='text' name='fname')
         p Last Name:&nbsp;&nbsp;
@@ -10,7 +10,5 @@ block content
             input(type='text' name='username')
         p Password:&nbsp;&nbsp;
             input(type="text" name='password')
-        p Retype Password:&nbsp;&nbsp;
-            input(type="text" name='repassword')
         p
             input(type="submit" value='Submit Infromation')
