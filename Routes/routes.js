@@ -86,18 +86,28 @@ exports.form = (req, res) => {
     });
 }
 
-exports.search = async (req, res) => {
-    const findResult = await User.find({
-        name: req.body.fname,
-    });
-    await cursor.forEach(findResult);
-}
-
-exports.searchForm = (req, res) => {
+exports.search = (req, res) => {
     res.render('search', {
         "title": "Search for friends or other users",
         "nav": nav
     });
+}
+
+exports.searchForm = (req, res) => {
+    User.find((error, users) => {
+        if (error) return console.error(error);
+        var userinfo;
+        users.forEach(function(user) {
+            userinfo = user;
+            var username = user.userName
+            if (username == req.body.username) {
+                document.getElementById
+            }
+        })
+        res.render('search', {
+            "nav": nav,
+        })
+    })
 }
 
 exports.delete = (req, res) => {
