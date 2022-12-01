@@ -13,7 +13,8 @@ block content
                 td #{item.lName}
                 td #{item.userName}
                 td #{item.password}
-                
+                td 
+                    a(href='/delete/' + item.id) Delete
     form(id='form', method='post', action="/login")
         p UserName: 
             input(type="text", name='username')
@@ -22,5 +23,4 @@ block content
         p 
             input(type="submit", value='Login')
             
-                td 
-                    a(href='/delete/' + item.id) Delete
+                
