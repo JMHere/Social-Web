@@ -58,3 +58,24 @@ exports.form = (req, res) => {
         "nav": nav
     });
 }
+
+exports.search = async (req, res) => {
+    const findResult = await User.find({
+        name: req.body.fname,
+    });
+    await cursor.forEach(findResult);
+}
+
+exports.searchForm = (req, res) => {
+    res.render('search', {
+        "title": "Search for friends or other users",
+        "nav": nav
+    });
+}
+
+exports.delete = (req, res) => {
+    User.findByIdAndDelete(req.params.id, (err, joke) => {
+        if(err) return console.error(err);
+    })
+    res.redirect('/')
+}

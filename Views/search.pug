@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    form(id='formId' method='get' action="/search")
+        p Search User:&nbsp;&nbsp;
+            input(type='text' name='fname')
+        p
+            input(type="submit" value='Search')
