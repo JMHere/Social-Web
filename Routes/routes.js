@@ -25,16 +25,12 @@ let userSchema = mongoose.Schema({
 let User = mongoose.model('User_Collection', userSchema);
 
 exports.index = (req, res) => {
-
-    User.find((error, users) => {
-        if (error) return console.error(error);
-
         res.render('index', {
-            "title": "Login",
-            "nav": nav,
-            users
         });
+}
 
+exports.createPage = (req, res) => {
+    res.render('createaccount',{
     })
 }
 
@@ -43,24 +39,40 @@ exports.login = (req, res) => {
         if (error) return console.error(error);
 
         var userinfo;
+        var userset;
+        var check = false;
 
         users.forEach(function(user) {
-            var username = user.userName
-            if (username == req.body.username) {
+            let username = user.userName
+            let password = user.password
+            console.log(user)
+            if (username == req.body.username && password == req.body.password) {
                 userinfo = user;
+
+                userset = {
+                    userName: userinfo.userName,
+                    fname: userinfo.name
+                }
+                check = true;
+            } else {
+                
             }
         })
+        
+        console.log(check)
 
-        let user = {
-            userName: userinfo.userName,
-            fname: userinfo.name
+        if(check == true) {
+            res.render('home', {
+                "title": "Home",
+                "nav": nav,
+                "user": userset,
+                users
+            })
+        } else {
+            res.render('index', {
+                "loginF": "Invalid Credentials"
+            })
         }
-
-        res.render('home', {
-            "title": "Home",
-            "nav": nav,
-            "user": user,
-        })
     })
 
 }

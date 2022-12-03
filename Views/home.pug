@@ -1,4 +1,18 @@
 extends layout 
 
-block content 
-    h3=`Welcome ${user.fname}`
+block content
+    table 
+        tr  
+            th Name 
+            th Last Name 
+            th UserName 
+            th Password 
+        each item in users 
+            tr 
+                td #{item.name}
+                td #{item.lName}
+                td #{item.userName}
+                td #{item.password}
+                td 
+                    a(href='/delete/' + item.id) Delete 
+        h3=`Welcome ${user.fname}`

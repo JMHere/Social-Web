@@ -21,6 +21,7 @@ app.post('/create', urlencodedParser, routes.createUser);
 app.get('/account', routes.form)
 app.post('/login', urlencodedParser, routes.login);
 app.get('/search', routes.search)
+app.get('/createaccount', routes.createPage)
 
 app.get('/delete/:id', routes.delete);
 

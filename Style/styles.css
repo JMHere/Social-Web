@@ -6,3 +6,23 @@ table, th, td {
 .userName {
     font-size: large;
 }
+
+.naver {
+    display: inline;
+    margin: 10px;
+}
+
+.naver:hover {
+    background-color: black;
+}
+
+.list {
+    text-align: center;
+    background-color: rgb(47, 45, 45);
+    padding: 20px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}

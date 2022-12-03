@@ -1,27 +1,14 @@
-extends layout 
-
-block content 
-    table 
-        tr  
-            th Name 
-            th Last Name 
-            th UserName 
-            th Password 
-        each item in users 
-            tr 
-                td #{item.name}
-                td #{item.lName}
-                td #{item.userName}
-                td #{item.password}
-                td 
-                    a(href='/delete/' + item.id) Delete
-                    
-    form(id='form', method='post', action="/login")
-        p UserName: 
-            input(type="text", name='username')
-        p Password:
-            input(type="text", name='password')
-        p 
-            input(type="submit", value='Login')
-            
-                
+doctype 
+html 
+    body
+        h1="Welcome to Social Web"
+        form(id='form', method='post', action="/login")
+            p UserName: 
+                input(type="text", name='username')
+            p Password:
+                input(type="text", name='password')
+            p 
+                input(type="submit", value='Login')
+            p=loginF
+            p 
+                a(href='/createaccount') Create Account 

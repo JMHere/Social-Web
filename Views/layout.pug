@@ -5,11 +5,10 @@ html
     body 
         header 
             nav
-                ul 
+                ul.list 
                     each item in nav.menu 
-                        a(href=item[1] traget=item[2])
-                            div(class='menu_item')
-                                li(id=item[0]) #{item[0]}
+                        a.link(href=item[1] traget=item[2])
+                            li.naver(id=item[0]) #{item[0]}
         section 
             h1 #{title}
             h2=title2
