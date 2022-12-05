@@ -26,3 +26,37 @@ table, th, td {
     color: white;
     text-decoration: none;
 }
+
+.loginForm {
+    text-align: center;
+    background-color: silver;
+    padding: 5px;
+    margin-left: 600px;
+    margin-right: 600px;
+    border-radius: 10px;
+}
+.create:hover {
+    background-color: white;
+}
+
+.create {
+    color: black;
+    background-color: lightgreen;
+    text-decoration: none;
+    padding: 5px;
+    border-style: solid;
+    margin-left: 350px;
+}
+.welcome {
+    text-align: center;
+}
+
+.login {
+    background-color: lightblue;
+    padding: 5px;
+}
+
+.login:hover {
+    background-color: white;
+    cursor: pointer;
+}

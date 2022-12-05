@@ -22,6 +22,7 @@ app.get('/account', routes.form)
 app.post('/login', urlencodedParser, routes.login);
 app.get('/search', routes.search)
 app.get('/createaccount', routes.createPage)
+app.get('/home', routes.home)
 
 app.get('/delete/:id', routes.delete);
 

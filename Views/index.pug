@@ -1,14 +1,17 @@
 doctype 
-html 
+html
+    head 
+        link(rel="stylesheet", href="styles.css")
     body
-        h1="Welcome to Social Web"
-        form(id='form', method='post', action="/login")
-            p UserName: 
+        h1.welcome="Welcome to Social Web"
+        div.loginForm
+            form(id='form', method='post', action="/login")
+                p UserName: 
                 input(type="text", name='username')
-            p Password:
+                p Password:
                 input(type="text", name='password')
-            p 
-                input(type="submit", value='Login')
-            p=loginF
-            p 
-                a(href='/createaccount') Create Account 
+                p 
+                    input.login(type="submit", value='Login')
+                p=loginF
+                p 
+                    a.create(href='/createaccount') Create Account 

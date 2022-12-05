@@ -34,12 +34,14 @@ exports.createPage = (req, res) => {
     })
 }
 
+var userinfo;
+var userset;
+
 exports.login = (req, res) => {
     User.find((error, users) => {
         if (error) return console.error(error);
 
-        var userinfo;
-        var userset;
+        
         var check = false;
 
         users.forEach(function(user) {
@@ -75,6 +77,18 @@ exports.login = (req, res) => {
         }
     })
 
+}
+
+exports.home = (req, res) => {
+    User.find((error, users) => {
+    if (error) return console.error(error);
+        res.render('home', {
+            "title": "Home",
+            "nav": nav,
+            "user": userset,
+            users
+        })
+    })
 }
 
 
